@@ -1,0 +1,9 @@
+.hero{
+    background-image: url('./images/Smartphones.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: center;
+}

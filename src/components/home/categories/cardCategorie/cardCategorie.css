@@ -1,0 +1,85 @@
+.cards-completecar{
+    width: 90%;
+    max-width: 450px;
+}
+
+.card-cate{
+
+    height: 600px;
+    background-color:aqua;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    cursor: pointer;
+    position: relative;
+}
+
+.img-ca{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imagen-cardcate{
+    width: 100%;
+    height: auto;
+}
+
+.text-cate{
+    position: absolute;
+    width: 80%;
+    height: 95%;
+    justify-content: end;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-cate h5{
+    font-size: large;
+    font-family: "Anta", monospace;
+    font-weight: 50;
+    font-style: normal;
+    color: cadetblue;
+}
+
+.text-cate h2{
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.card-cate:hover .img-ca,  .card-cate:hover .text-cate{
+    transform: translate(0, -10%);
+    transition: 0.3s ease-out;
+  }
+
+  .btncate {
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    height: 12%;
+    background-color: #6c00f8;
+    color: #fff;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    font-family: 'Cabin', Courier, monospace;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+    gap: 20px;
+  }
+
+
+  .card-cate:hover .btncate {
+    transform: translate(0%, -0%);
+    opacity: 1;
+  }

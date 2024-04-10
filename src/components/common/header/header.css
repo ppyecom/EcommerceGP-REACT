@@ -1,0 +1,51 @@
+header{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.headerDiferent{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-bottom: 2px solid;
+}
+
+.container-header{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logox img{
+    height: 60px;
+}
+
+
+
+.secciones-page nav ul{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.icons-inter{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-h{
+    cursor: pointer;
+}
+
+.toggle-menu{
+    display: none;
+}
