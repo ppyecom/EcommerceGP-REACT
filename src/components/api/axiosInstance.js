@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:5062/api/', // Cambia esta URL por la URL de tu backend
+  baseURL: 'http://oxudown-001-site1.ktempurl.com/api/', // Cambia esta URL por la URL de tu backend
 });
 
 // Función para establecer el token de autenticación en Axios

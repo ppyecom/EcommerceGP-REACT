@@ -3,10 +3,11 @@ import './poplogin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard, faArrowRight, faX } from '@fortawesome/free-solid-svg-icons';
 import { axiosInstance, setAuthToken } from '../../api/axiosInstance';
+import axios from 'axios'
 
 
-const PopLogin = (props, { onLogin }) => {
-    const [user, setUser] = useState('adminGP');
+const PopLogin = (props) => {
+    const [usern, setUser] = useState('adminGP');
     const [pass, setPass] = useState('admin');
     
 
@@ -20,15 +21,17 @@ const PopLogin = (props, { onLogin }) => {
 
     const handleLogin = async () => {
         try {
-          const response = await axiosInstance.post('Autenticacion/Validar' , {
-            user,
-            pass
-          });
+            const data = { usern, pass }
+            const queryString = Object.keys(data).map(key => 
+                `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+            ).join('&')
+
+          const response = await axiosInstance.post(`Autenticacion/Validar?${queryString}` , data);
     
           const { token } = response.data;
           localStorage.setItem('token', token);
           setAuthToken(token)
-          onLogin(token); // Llamada a la función proporcionada por el componente padre para manejar el token
+          console.log(token)
         } catch (error) {
           console.error('Error de inicio de sesión:', error.message);
         }
@@ -49,7 +52,7 @@ const PopLogin = (props, { onLogin }) => {
                         <div className="credenciales">
                             <div className="cred-usu">
                                 <h3>Usuario</h3>
-                                <input className='popupuser' type="text" placeholder='abcd1234' onChange={userChange} value={user} />
+                                <input className='popupuser' type="text" placeholder='abcd1234' onChange={userChange} value={usern} />
                             </div>
                             <div className="cred-pass">
                                 <h3>Contraseña</h3>

@@ -8,7 +8,6 @@ import ProtectedRoute from './ProtectedRoute'
 
 const Pages = () => {
 
-  const [autorizado, setAutorizado] = useState(false)
 
 
   return (
@@ -17,9 +16,10 @@ const Pages = () => {
     <div className="container-pages">
       
       <Routes>
-          <Route path='/' Component={Home}/>
-          <Route path='/products' Component={Products}/>
-          
+          <Route path='/' element={<Home/>}/>
+          <Route path='/products' element={<ProtectedRoute>
+            <Products/>
+            </ProtectedRoute>}/>
       </Routes>
     </div>
     </>

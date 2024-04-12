@@ -8,8 +8,16 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 import { Grid, Pagination } from 'swiper/modules';
+import FetchProductsGet from '../hooks/products/FetchProductsGet';
+import ProductsCard from './productsCard/ProductsCard';
 
 const Products = () => {
+
+  const {products, isLoading} = FetchProductsGet()
+
+  console.log(products)
+  console.log(isLoading)
+
   return (
     <>
         <section className='section-products'>
@@ -26,15 +34,14 @@ const Products = () => {
                 modules={[Grid, Pagination]}
                 className="mySwiper">
 
-                <SwiperSlide className='swiper-yo'>Slide 1</SwiperSlide>
-                <SwiperSlide className='swiper-yo'>Slide 2</SwiperSlide>
-                <SwiperSlide className='swiper-yo'>Slide 3</SwiperSlide>
-                <SwiperSlide className='swiper-yo'>Slide 4</SwiperSlide>
-                <SwiperSlide className='swiper-yo'>Slide 5</SwiperSlide>
-                <SwiperSlide className='swiper-yo'>Slide 6</SwiperSlide>
-                <SwiperSlide className='swiper-yo'>Slide 7</SwiperSlide>
-                <SwiperSlide className='swiper-yo'>Slide 8</SwiperSlide>
-                <SwiperSlide className='swiper-yo'>Slide 9</SwiperSlide>
+
+                {products.map((product, index)=>{
+                  return(
+                    <SwiperSlide key={index} className='swiper-yo'>
+                      <ProductsCard key={index} {...product}/>
+                    </SwiperSlide>
+                  )
+                })}
                 </Swiper>
             </div>
         </section>
