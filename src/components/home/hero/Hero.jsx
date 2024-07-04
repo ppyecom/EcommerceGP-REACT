@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <>
         <section className='hero'>
-            <img src="./images/Smartphones.jpg">
+            <img src="./images/Smartphones.jpg"/>
         </section>
     </>
   )
